@@ -69,6 +69,7 @@ class Route extends React.Component {
             <RouterContext.Provider value={props}>
               {children && !isEmptyChildren(children)
                 ? children
+                // 如果 匹配正确 就渲染子元素
                 : props.match
                   ? component
                   // 如果传入了 component 属性，就注入一些 props
@@ -95,6 +96,5 @@ export default Route;
 
 ### 总结
 
-- 配合 Router 结合 context api 实现了 组件间层级通信
-- Route 支持嵌套
+- 配合 Router 结合 context api 实现了 组件间层级通信，Route 支持嵌套
 - 支持 children component render 三种传递子元素的方式
