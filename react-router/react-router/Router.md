@@ -39,7 +39,9 @@ class Router extends React.Component {
         if (this._isMounted) {
           this.setState({ location });
         } else {
-          // 走到这个分支的情况是： 子组件在RouterdidMount前操作了路由， 比如 Redirect 在didMount时对路由进行 push/replace，子组件的didMount是先于父组件 didMount 执行的，这里缓存 新的 location 对象
+          // 走到这个分支的情况是： 子组件在RouterdidMount前操作了路由，比如 Redirect 在didMount时对路由进行 push/replace，
+          // 子组件的didMount是先于父组件 didMount 执行的，这里缓存 新的 location 对象
+
           // 为什么不直接 setState ，而是缓存下来，在didMount阶段执行？
           // 这是为了避免子组件多次操作路由（如 存在多个 Redirect 组件）时，导致这里多次调用 setState
           this._pendingLocation = location;
