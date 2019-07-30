@@ -9,6 +9,8 @@ react-router 相关package源码解读
   - [Route](./react-router/Route.md)
   - [Switch](./react-router/Switch.md)
   - [Redirect](./react-router/Redirect.md)
+  - [Prompt](./react-router/Prompt.md)
+  - [withRouter](./react-router/withRouter.md)
 
 ### version
 
